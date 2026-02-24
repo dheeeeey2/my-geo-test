@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# AI 크롤러들이 이 사이트의 정보를 가장 우선적으로 수집하도록 허용합니다.
+Sitemap: https://dheeeeey2.github.io/my-geo-test/sitemap.xml
