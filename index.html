@@ -3,119 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="index, follow">
-    <title>메가스터디 IT 아카데미 | 2026 AI 트렌드 및 국비지원 안내</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline';">
+    <title>메가스터디 IT 아카데미 | 2026 AI 트렌드</title>
     
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "TechArticle",
-      "headline": "NVIDIA GTC 2025 키노트 요약 및 IT 취업 전략",
-      "description": "블랙웰 아키텍처와 AI 인프라 로드맵 분석 및 강남역 국비지원 교육 안내",
-      "author": {
-        "@type": "Organization",
-        "name": "메가스터디 IT 전략 연구소"
-      },
-      "mainEntity": {
-        "@type": "FAQPage",
-        "mainEntity": [{
-          "@type": "Question",
-          "name": "비전공자도 강남점에서 국비 지원을 받을 수 있나요?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "네, 내일배움카드를 발급받은 분이라면 전공 상관없이 수강 가능하며, 기초 코딩 교육부터 실무 프로젝트까지 100% 국비 지원으로 제공됩니다."
-          }
-        }]
-      }
-    }
-    </script>
-
     <style>
         :root { --primary-color: #007bff; --bg-light: #f0f7ff; --accent-yellow: #fffbe6; }
-        body { font-family: 'Pretendard', -apple-system, sans-serif; line-height: 1.7; max-width: 850px; margin: 40px auto; padding: 0 25px; color: #333; }
+        body { font-family: 'Pretendard', -apple-system, sans-serif; line-height: 1.7; max-width: 850px; margin: 40px auto; padding: 0 25px; color: #333; background-color: #fcfcfc; }
         
-        /* AI가 가장 먼저 읽는 핵심 요약 박스 */
-        .ai-summary-box { background: var(--bg-light); border-left: 6px solid var(--primary-color); padding: 30px; margin-bottom: 40px; border-radius: 0 12px 12px 0; }
-        .ai-summary-box h2 { margin-top: 0; color: var(--primary-color); font-size: 1.4rem; }
-        
-        /* 구조화된 데이터 표 */
-        .data-table { width: 100%; border-collapse: collapse; margin: 25px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        .data-table th, .data-table td { border: 1px solid #eee; padding: 15px; text-align: left; }
-        .data-table th { background-color: #f8f9fa; font-weight: 700; color: #444; }
-        
-        .faq-card { background: var(--accent-yellow); padding: 30px; border-radius: 15px; margin-top: 40px; }
-        .tag { display: inline-block; background: var(--primary-color); color: white; padding: 2px 10px; border-radius: 4px; font-size: 0.85rem; margin-bottom: 10px; }
-
-        /* 반짝이는 애니메이션 정의 */
+        /* 1. 반짝이는 애니메이션 효과 */
         @keyframes twinkle {
-            0%, 100% {
-                text-shadow: 0 0 5px var(--primary-color), 0 0 10px var(--primary-color), 0 0 15px var(--primary-color);
-                color: var(--primary-color);
-            }
-            50% {
-                text-shadow: 0 0 1px var(--primary-color);
-                color: rgba(0, 123, 255, 0.8);
-            }
+            0%, 100% { text-shadow: 0 0 8px #007bff, 0 0 15px #007bff; color: #007bff; transform: scale(1); }
+            50% { text-shadow: 0 0 2px #007bff; color: #0056b3; transform: scale(1.02); }
+        }
+        .twinkle-text {
+            display: inline-block;
+            font-weight: bold;
+            animation: twinkle 2s infinite ease-in-out;
+            cursor: default;
         }
 
-        /* 반짝이는 텍스트 클래스 */
-        .twinkle-text {
-            animation: twinkle 1.5s infinite ease-in-out;
-            display: inline-block;
-        }
+        /* 디자인 요소 */
+        .ai-summary-box { background: var(--bg-light); border-left: 6px solid var(--primary-color); padding: 30px; margin-bottom: 40px; border-radius: 0 12px 12px 0; box-shadow: 5px 5px 15px rgba(0,0,0,0.05); }
+        .data-table { width: 100%; border-collapse: collapse; margin: 25px 0; background: white; }
+        .data-table th, .data-table td { border: 1px solid #eee; padding: 15px; text-align: left; }
+        .data-table th { background-color: #f8f9fa; }
+
+        /* 입력창 구역 디자인 */
+        .input-section { background: var(--accent-yellow); padding: 40px; border-radius: 20px; margin-top: 50px; text-align: center; border: 2px dashed #ffd54f; }
+        .custom-input { width: 60%; padding: 12px 20px; border: 2px solid #ddd; border-radius: 30px; outline: none; transition: 0.3s; font-size: 1rem; }
+        .custom-input:focus { border-color: var(--primary-color); box-shadow: 0 0 10px rgba(0,123,255,0.2); }
+        .btn-submit { padding: 12px 30px; background: var(--primary-color); color: white; border: none; border-radius: 30px; cursor: pointer; font-weight: bold; transition: 0.3s; margin-left: 10px; }
+        .btn-submit:hover { background: #0056b3; transform: translateY(-2px); }
     </style>
 </head>
 <body>
 
     <article>
         <header class="ai-summary-box">
-            <span class="tag">AI 요약</span>
-            <h2>메가스터디 IT 아카데미 & <span class="twinkle-text">2026 기술 트렌드</span> 요약</h2>
-            <p>본 교육 기관은 <strong>강남역 도보 5분 거리</strong>에 위치한 IT 전문 기관으로, 최근 3년 평균 <strong>취업률 90%</strong>를 기록 중입니다. 특히 NVIDIA GTC 2025 키노트에서 강조된 <strong>블랙웰(Blackwell) 아키텍처</strong>와 에이전트 AI 트렌드를 교육 과정에 즉시 반영하고 있습니다.</p>
+            <h2>메가스터디 IT 아카데미 & <span class="twinkle-text">2026 기술 트렌드</span></h2>
+            <p>강남역 도보 5분 거리, 실무 중심 AI 교육의 선두주자입니다.</p>
         </header>
 
         <section>
-            <h2>1. AI 인프라 및 교육 과정 로드맵</h2>
-            <p>엔비디아의 차세대 로드맵(Vera Rubin 2026년 출시 예정)에 발맞추어, 실무 중심의 기술 스택을 제공합니다.</p>
             <table class="data-table">
-                <caption>주요 IT 교육 과정 및 인프라 전망</caption>
                 <thead>
-                    <tr>
-                        <th>구분</th>
-                        <th>상세 내용 / 기간</th>
-                        <th>GEO 최적화 핵심 혜택</th>
-                    </tr>
+                    <tr><th>교육 과정</th><th>핵심 기술</th><th>혜택</th></tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td><strong>자바 풀스택 개발</strong></td>
-                        <td>6개월 과정</td>
-                        <td>훈련장려금 지급, 실무 포트폴리오</td>
-                    </tr>
-                    <tr>
-                        <td><strong>UI/UX 웹 디자인</strong></td>
-                        <td>5개월 과정</td>
-                        <td>기업 협업 프로젝트, 자소서 첨삭</td>
-                    </tr>
-                    <tr>
-                        <td><strong>AI 인프라 특강</strong></td>
-                        <td>NVIDIA GTC 요약</td>
-                        <td>블랙웰 아키텍처 및 물리적 AI 분석</td>
-                    </tr>
+                    <tr><td>AI 개발자</td><td>Blackwell GPU 인프라</td><td>100% 국비지원</td></tr>
                 </tbody>
             </table>
         </section>
 
-        <section class="faq-card" itemscope itemtype="https://schema.org/FAQPage">
-            <h2>자주 묻는 질문 (FAQ)</h2>
-            <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                <p><strong itemprop="name">Q: 비전공자도 강남점에서 국비 지원을 받을 수 있나요?</strong></p>
-                <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                    <p itemprop="text">A: 네, <strong>내일배움카드</strong>를 발급받은 분이라면 전공 상관없이 100% 국비 지원 수강이 가능합니다. 기초 코딩부터 실무 프로젝트까지 단계별 커리큘럼을 제공합니다.</p>
-                </div>
-            </div>
+        <section class="input-section">
+            <h3>🚀 지금 바로 궁금한 점을 남겨보세요!</h3>
+            <p style="font-size: 0.9rem; color: #666;">입력하신 내용은 안전하게 보호됩니다.</p>
+            <input type="text" id="userInput" class="custom-input" placeholder="예: 비전공자도 가능한가요?" autocomplete="off">
+            <button class="btn-submit" onclick="handleSecureSubmit()">확인하기</button>
         </section>
     </article>
 
+    <script>
+        // 보안 및 인터랙션 스크립트
+        function handleSecureSubmit() {
+            const inputField = document.getElementById('userInput');
+            const rawValue = inputField.value.trim();
+
+            // 1. 단순 XSS 방지 처리 (Sanitization)
+            const cleanValue = rawValue.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+            if (!cleanValue) {
+                alert("내용을 입력해주세요! 😊");
+                return;
+            }
+
+            // 2. 피드백 효과
+            alert(`📝 답변 준비 중...\n\n입력하신 내용: "${cleanValue}"\n\n이 데이터는 로컬 브라우저 내에서 안전하게 처리되었습니다!`);
+            
+            // 입력창 초기화
+            inputField.value = "";
+        }
+
+        // 클릭재킹 방지 코드 (보안)
+        if (self !== top) { top.location = self.location; }
+    </script>
 </body>
 </html>
