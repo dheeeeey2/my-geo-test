@@ -7,33 +7,31 @@
     <title>메가스터디 IT 아카데미 | 2026 AI 트렌드</title>
     
     <style>
-        :root { --primary-color: #007bff; --bg-light: #f0f7ff; --accent-yellow: #fffbe6; }
+        :root { --primary-color: #007bff; --bg-light: #f0f7ff; --accent-yellow: #fffbe6; --weather-bg: #e3f2fd; }
         body { font-family: 'Pretendard', -apple-system, sans-serif; line-height: 1.7; max-width: 850px; margin: 40px auto; padding: 0 25px; color: #333; background-color: #fcfcfc; }
         
-        /* 1. 반짝이는 애니메이션 효과 */
+        /* 반짝이는 애니메이션 */
         @keyframes twinkle {
-            0%, 100% { text-shadow: 0 0 8px #007bff, 0 0 15px #007bff; color: #007bff; transform: scale(1); }
+            0%, 100% { text-shadow: 0 0 8px #007bff; color: #007bff; transform: scale(1); }
             50% { text-shadow: 0 0 2px #007bff; color: #0056b3; transform: scale(1.02); }
         }
-        .twinkle-text {
-            display: inline-block;
-            font-weight: bold;
-            animation: twinkle 2s infinite ease-in-out;
-            cursor: default;
-        }
+        .twinkle-text { display: inline-block; font-weight: bold; animation: twinkle 2s infinite ease-in-out; }
 
-        /* 디자인 요소 */
-        .ai-summary-box { background: var(--bg-light); border-left: 6px solid var(--primary-color); padding: 30px; margin-bottom: 40px; border-radius: 0 12px 12px 0; box-shadow: 5px 5px 15px rgba(0,0,0,0.05); }
+        .ai-summary-box { background: var(--bg-light); border-left: 6px solid var(--primary-color); padding: 30px; margin-bottom: 30px; border-radius: 0 12px 12px 0; box-shadow: 5px 5px 15px rgba(0,0,0,0.05); }
+        
+        /* 🌦️ 추가된 날씨 섹션 스타일 */
+        .weather-card { background: var(--weather-bg); padding: 20px; border-radius: 15px; margin-bottom: 30px; display: flex; align-items: center; justify-content: space-around; border: 1px solid #bbdefb; }
+        .weather-info { text-align: center; }
+        .weather-info h4 { margin: 0; color: #1565c0; font-size: 0.9rem; }
+        .weather-temp { font-size: 1.8rem; font-weight: bold; color: #0d47a1; }
+
         .data-table { width: 100%; border-collapse: collapse; margin: 25px 0; background: white; }
         .data-table th, .data-table td { border: 1px solid #eee; padding: 15px; text-align: left; }
         .data-table th { background-color: #f8f9fa; }
 
-        /* 입력창 구역 디자인 */
         .input-section { background: var(--accent-yellow); padding: 40px; border-radius: 20px; margin-top: 50px; text-align: center; border: 2px dashed #ffd54f; }
-        .custom-input { width: 60%; padding: 12px 20px; border: 2px solid #ddd; border-radius: 30px; outline: none; transition: 0.3s; font-size: 1rem; }
-        .custom-input:focus { border-color: var(--primary-color); box-shadow: 0 0 10px rgba(0,123,255,0.2); }
-        .btn-submit { padding: 12px 30px; background: var(--primary-color); color: white; border: none; border-radius: 30px; cursor: pointer; font-weight: bold; transition: 0.3s; margin-left: 10px; }
-        .btn-submit:hover { background: #0056b3; transform: translateY(-2px); }
+        .custom-input { width: 60%; padding: 12px 20px; border: 2px solid #ddd; border-radius: 30px; outline: none; font-size: 1rem; }
+        .btn-submit { padding: 12px 30px; background: var(--primary-color); color: white; border: none; border-radius: 30px; cursor: pointer; font-weight: bold; margin-left: 10px; }
     </style>
 </head>
 <body>
@@ -41,51 +39,59 @@
     <article>
         <header class="ai-summary-box">
             <h2>메가스터디 IT 아카데미 & <span class="twinkle-text">2026 기술 트렌드</span></h2>
-            <p>강남역 도보 5분 거리, 실무 중심 AI 교육의 선두주자입니다.</p>
+            <p>강남역 도보 5분 거리, 당신의 성장을 응원합니다.</p>
         </header>
 
+        <section class="weather-card">
+            <div class="weather-info">
+                <h4>📅 오늘 날짜</h4>
+                <div id="current-date" style="font-weight: bold;">2026. 02. 27</div>
+            </div>
+            <div class="weather-info">
+                <h4>🌡️ 서울 기온</h4>
+                <div class="weather-temp">4°C</div>
+            </div>
+            <div class="weather-info" style="max-width: 250px;">
+                <h4>💡 오늘의 한마디</h4>
+                <p style="font-size: 0.85rem; margin: 5px 0;">봄이 오기 전 마지막 추위네요! 따뜻한 커피 한 잔과 함께 열공 어때요?</p>
+            </div>
+        </section>
+
         <section>
+            <h3>1. AI 인프라 로드맵</h3>
             <table class="data-table">
                 <thead>
                     <tr><th>교육 과정</th><th>핵심 기술</th><th>혜택</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td>AI 개발자</td><td>Blackwell GPU 인프라</td><td>100% 국비지원</td></tr>
+                    <tr><td>자바 풀스택</td><td>Blackwell 인프라</td><td>100% 국비지원</td></tr>
                 </tbody>
             </table>
         </section>
 
         <section class="input-section">
-            <h3>🚀 지금 바로 궁금한 점을 남겨보세요!</h3>
-            <p style="font-size: 0.9rem; color: #666;">입력하신 내용은 안전하게 보호됩니다.</p>
-            <input type="text" id="userInput" class="custom-input" placeholder="예: 비전공자도 가능한가요?" autocomplete="off">
-            <button class="btn-submit" onclick="handleSecureSubmit()">확인하기</button>
+            <h3>🚀 궁금한 점이 있다면 알려주세요!</h3>
+            <input type="text" id="userInput" class="custom-input" placeholder="무엇이든 물어보세요" autocomplete="off">
+            <button class="btn-submit" onclick="handleSecureSubmit()">확인</button>
         </section>
     </article>
 
     <script>
-        // 보안 및 인터랙션 스크립트
+        // 날짜 자동 업데이트 (보너스 기능)
+        const now = new Date();
+        document.getElementById('current-date').innerText = `${now.getFullYear()}. ${String(now.getMonth() + 1).padStart(2, '0')}. ${String(now.getDate()).padStart(2, '0')}`;
+
         function handleSecureSubmit() {
             const inputField = document.getElementById('userInput');
-            const rawValue = inputField.value.trim();
-
-            // 1. 단순 XSS 방지 처리 (Sanitization)
-            const cleanValue = rawValue.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+            const cleanValue = inputField.value.trim().replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
             if (!cleanValue) {
                 alert("내용을 입력해주세요! 😊");
                 return;
             }
-
-            // 2. 피드백 효과
-            alert(`📝 답변 준비 중...\n\n입력하신 내용: "${cleanValue}"\n\n이 데이터는 로컬 브라우저 내에서 안전하게 처리되었습니다!`);
-            
-            // 입력창 초기화
+            alert(`📝 답변 준비 중...\n\n"${cleanValue}"에 대한 정보를 곧 확인해 드릴게요!`);
             inputField.value = "";
         }
-
-        // 클릭재킹 방지 코드 (보안)
-        if (self !== top) { top.location = self.location; }
     </script>
 </body>
 </html>
